@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_app"
+    app:startDestination="@id/joinRoomFragment">
+
+    <fragment
+        android:id="@+id/joinRoomFragment"
+        android:name="com.gcorelabs.videocallsdemo.screens.join_room.JoinRoomFragment"
+        android:label="JoinRoomFragment"
+        tools:layout="@layout/fragment_join_room">
+        <action
+            android:id="@+id/action_joinRoomFragment_to_roomFragment"
+            app:destination="@id/roomFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/roomFragment"
+        android:name="com.gcorelabs.videocallsdemo.screens.call.RoomFragment"
+        android:label="RoomFragment"
+        tools:layout="@layout/fragment_room"/>
+</navigation>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:background="@drawable/peer_item_background">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_user"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/peerVideoCardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+
+        app:cardBackgroundColor="#002E264A"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <gcore.videocalls.meet.ui.view.peer.PeerVideoView
+            android:id="@+id/peerVideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </gcore.videocalls.meet.ui.view.peer.PeerVideoView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/indicators_background"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="4dp"
+        android:orientation="horizontal"
+        android:elevation="4dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/indicatorMicro"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_peer_micro_24"
+            android:layout_marginEnd="4dp"/>
+
+        <ImageView
+            android:id="@+id/indicatorCamera"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_peer_camera_24"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/interlocutorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="2dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:background="@drawable/interlocutor_name_background"
+        android:elevation="4dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="B245asdfaadf"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

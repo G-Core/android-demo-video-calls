@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">GCoreVideoCallsDemo</string>
+
+    <string name="default_user_name">John</string>
+    <string name="default_room_id">serv2q123</string>
+    <string name="default_host_name">meet.gcorelabs.com</string>
+    <string name="default_client_host_name">https://meet.gcorelabs.com</string>
+    <string name="default_webrtc_host">webrtc3.gvideo.co</string>
+
+    <string name="join">Join</string>
+    <string name="start_with_video">Start with video</string>
+    <string name="start_with_audio">Start with audio</string>
+
+    <string name="user_name">Name:</string>
+    <string name="room_id">Room Id:</string>
+    <string name="client_host_name">Client Host Name:</string>
+
+    <string name="check_internet_connection">Check your internet connection</string>
+</resources>
