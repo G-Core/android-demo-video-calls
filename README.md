@@ -18,7 +18,7 @@ Setup real-time communication between users in 15 minutes in your Android projec
 
 # Setup of project
 
-1. SDK - [GCoreVideoCallsSDK](https://bitbucket.gcore.lu/users/bakhrom.muidinov_gcore.lu/repos/mobile_project_articles/browse/description_GCoreVideoCallsSDK.md#:~:text=8.16%20KB-,System%20requirements,-Anroid%20min%3A%204.3)  
+1. SDK - [GCoreVideoCallsSDK](https://github.com/G-Core/android-demo-video-calls/blob/releases/release_1.0.0/description_GCoreVideoCallsSDK.md#:~:text=Blame-,System%20requirements,-Anroid%20min%3A%204.3)  
 To work with G-Core Labs services (video calls), we need GCoreVideoCallsSDK. This SDK allows you to establish a connection to the server and receive events from it, as well as send and receive data streams from other users.
 
 2. Permissions  
@@ -31,7 +31,7 @@ The following permissions are required for the SDK to work:
     They need to be specified in the AndroidManifest.xml file of your project.
 
 3. API  
-The SDK receives events from the server and interacts with it using the GCoreMeet.instance object, you can see the full set of features [here](https://bitbucket.gcore.lu/users/bakhrom.muidinov_gcore.lu/repos/mobile_project_articles/browse/description_GCoreVideoCallsSDK.md#:~:text=Subscribe%20to%20changes%20occurring%20in%20the%20call%20room).
+The SDK receives events from the server and interacts with it using the GCoreMeet.instance object, you can see the full set of features [here](https://github.com/G-Core/android-demo-video-calls/blob/releases/release_1.0.0/description_GCoreVideoCallsSDK.md#:~:text=Subscribe%20to%20changes%20occurring%20in%20the%20call%20room).
 
 # Requirements
 
@@ -42,11 +42,11 @@ The SDK receives events from the server and interacts with it using the GCoreMee
 4. The presence of a camera and microphone on the device.
 
 # Screenshots
-<img src="https://user-images.githubusercontent.com/100352152/168834191-2c02fe09-caf7-4c85-8654-461c1b0b8d5c.png" width="330"> <img 
-    src="https://user-images.githubusercontent.com/100352152/168834213-4f2efdfb-fbc7-4775-ab0a-b11922a88d5a.png" width="330">
-<img src="https://user-images.githubusercontent.com/100352152/168834242-5dad7b3c-9905-437a-8186-134cffcff56e.png" width="330">
-<img src="https://user-images.githubusercontent.com/100352152/168834266-8be80567-a528-4158-abd9-067aa4abe910.png" width="330">
-<img src="https://user-images.githubusercontent.com/100352152/168834291-7fb29d11-8d4e-4758-8d53-cc36e63de968.png" width="330">
+<img src="https://user-images.githubusercontent.com/100352152/168834191-2c02fe09-caf7-4c85-8654-461c1b0b8d5c.png" width="300"> <img 
+    src="https://user-images.githubusercontent.com/100352152/168834213-4f2efdfb-fbc7-4775-ab0a-b11922a88d5a.png" width="300">
+<img src="https://user-images.githubusercontent.com/100352152/168834242-5dad7b3c-9905-437a-8186-134cffcff56e.png" width="300">
+<img src="https://user-images.githubusercontent.com/100352152/168834266-8be80567-a528-4158-abd9-067aa4abe910.png" width="300">
+<img src="https://user-images.githubusercontent.com/100352152/168834291-7fb29d11-8d4e-4758-8d53-cc36e63de968.png" width="300">
 
 # License
     Copyright 2022 G-Core Labs
