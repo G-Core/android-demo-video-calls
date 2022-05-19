@@ -28,7 +28,7 @@
         app:cardBackgroundColor="@color/purple3"
         app:cardCornerRadius="16dp">
 
-        <gcore.videocalls.meet.ui.view.me.LocalVideoView
+        <gcore.videocalls.meet.ui.view.me.LocalVideoTextureView
             android:id="@+id/localVideo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
