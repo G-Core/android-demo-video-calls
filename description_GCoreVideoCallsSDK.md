@@ -54,16 +54,16 @@
    GCoreMeet.instance.roomManager.isModer = true
    ```
 
-   | Method | Type | Description | 
-   |--|--|--| 
-   | setRoomId | String | Room ID to connect to<br>*Example:*   `roomId:     "serv01234"` |   
+   | Method    | Type   | Description | 
+   |-----------|--------|-------------| 
+   | setRoomId | String | Room ID to connect to<br>*Example:*   `roomId: "serv01234"` |   
 
-   | Parameter | Type | Description| 
-   |--|--|--| 
-   |displayName | String | Set display name of participant<br>[Link for   extra  details in knowledge base](https://gcorelabs.com/support/articles/4404682043665/#h_01FBPQAEZZ1GR7SF7G7TBAYJWZ)   <br>*Example:* `displayName:   "John Snow"`| 
-   | peerId | String? (optional) | ID of a participant from your   internal  system. Please specify userID if you have your own. Or just   leave this   field blank, then the value will be generated   automatically.<br>[Link for extra details in knowledge base](https://gcorelabs.com/support/articles/4404682043665#h_01FBPQC18B1E3K58C05A8E81Y7)<br>*Example:* `peerId:"user0000000001"`| 
+   | Parameter      | Type               | Description| 
+   |----------------|--------------------|------------| 
+   | displayName    | String             | Set display name of participant<br>[Link for   extra  details in knowledge base](https://gcorelabs.com/support/articles/4404682043665/#h_01FBPQAEZZ1GR7SF7G7TBAYJWZ)   <br>*Example:* `displayName:   "John Snow"`| 
+   | peerId         | String? (optional) | ID of a participant from your   internal  system. Please specify userID if you have your own. Or just   leave this   field blank, then the value will be generated   automatically.<br>[Link for extra details in knowledge base](https://gcorelabs.com/support/articles/4404682043665#h_01FBPQC18B1E3K58C05A8E81Y7)<br>*Example:* `peerId:"user0000000001"`| 
    | clientHostName | String? (optional) | In this parameter, the client passes the domain name that he uses to operate the web version of the mit. Value: domain only, no protocol specified   <br>*Example:*    `clientHostName: "meet.gcorelabs.com"`| 
-   | isModer | Boolean | if `true`, then the user will be a moderator, and additional functionality is available for him
+   | isModer        | Boolean            | if `true`, then the user will be a moderator, and additional functionality is available for him
 
 3. The following permissions are required for the SDK to work
    ```xml
@@ -152,9 +152,16 @@
 
 ## Display room members
 
-To display video from the device's camera, use LocalVideoView
+To display video from the device's camera, use LocalVideoTextureView or LocalVideoSurfaceView
 ```xml
- <gcore.videocalls.meet.ui.view.me.LocalVideoView
+ <gcore.videocalls.meet.ui.view.me.LocalVideoTextureView
+     android:id="@+id/localVideo"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"/>
+```
+
+```xml
+ <gcore.videocalls.meet.ui.view.me.LocalVideoSurfaceView
      android:id="@+id/localVideo"
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"/>

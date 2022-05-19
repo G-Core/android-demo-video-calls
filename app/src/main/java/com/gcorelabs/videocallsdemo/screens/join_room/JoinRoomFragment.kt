@@ -3,8 +3,12 @@ package com.gcorelabs.videocallsdemo.screens.join_room
 import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.Preview
+import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -15,6 +19,7 @@ import com.gcorelabs.videocallsdemo.isAvailableNetwork
 import com.gcorelabs.videocallsdemo.screens.call.RoomFragment
 import com.gcorelabs.videocallsdemo.showShortToast
 import gcore.videocalls.meet.GCoreMeet
+import java.lang.Exception
 
 class JoinRoomFragment : Fragment(R.layout.fragment_join_room) {
 
@@ -28,6 +33,15 @@ class JoinRoomFragment : Fragment(R.layout.fragment_join_room) {
             requestPermissions.launch(REQUIRED_PERMISSIONS)
         }
 
+        startCamera()
+        binding.toggleVideo.setOnCheckedChangeListener { _, isEnabled ->
+            if (isEnabled) {
+                binding.cameraPreview.visibility = View.VISIBLE
+            } else {
+                binding.cameraPreview.visibility = View.GONE
+            }
+        }
+
         binding.joinBtn.setOnClickListener {
 
             if (isAvailableNetwork()) {
@@ -37,6 +51,33 @@ class JoinRoomFragment : Fragment(R.layout.fragment_join_room) {
                 showShortToast(R.string.check_internet_connection)
             }
         }
+    }
+
+    private fun startCamera() {
+        val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
+        val cameraSelector = CameraSelector.DEFAULT_FRONT_CAMERA
+
+        cameraProviderFuture.addListener({
+            val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
+
+            val preview = Preview.Builder()
+                .build()
+                .also {
+                    it.setSurfaceProvider(binding.cameraPreview.surfaceProvider)
+                }
+
+            try {
+                cameraProvider.unbindAll()
+
+                cameraProvider.bindToLifecycle(
+                    viewLifecycleOwner,
+                    cameraSelector,
+                    preview
+                )
+            } catch (e: Exception) {
+                Log.e("CameraX", "Use case binding failed", e)
+            }
+        }, ContextCompat.getMainExecutor(requireContext()))
     }
 
     private fun routeToRoom() = findNavController().navigate(
